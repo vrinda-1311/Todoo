@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from user_app.views import *
 from todo_app.views import *
+from todo_sam.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,5 +31,6 @@ urlpatterns = [
     path('update/<int:pk>',UpdateView.as_view(),name="update"),
     path("",BaseView.as_view(),name="home"),
     path("complete/<int:pk>",TaskComplete.as_view(), name="complete"),
+    path('listcreatee/',TodolistCreateView.as_view())
     
 ]
